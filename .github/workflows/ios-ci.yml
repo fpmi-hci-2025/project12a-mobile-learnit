@@ -1,4 +1,4 @@
-name: Simple Build
+name: Simple iOS Build
 
 on: push
 
@@ -8,12 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Build
+      - name: Build for simulator SDK
         run: |
+          echo "🚀 Собираю проект для iOS симулятора..."
+          
+          # Просто собираем для SDK симулятора без указания конкретного устройства
           xcodebuild clean build \
             -project "LearnIt.xcodeproj" \
             -scheme "LearnIt" \
-            -destination "platform=iOS Simulator,name=iPhone 15" \
+            -sdk iphonesimulator \
             CODE_SIGNING_ALLOWED=NO
           
-          echo "✅ Готово!"
+          echo "✅ Проект успешно скомпилирован!"
