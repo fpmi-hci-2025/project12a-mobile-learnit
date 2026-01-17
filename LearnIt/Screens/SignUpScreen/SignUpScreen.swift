@@ -267,8 +267,6 @@ private extension SignUpScreen {
                 .background(
                     RoundedRectangle(cornerRadius: 12)
                         .fill(
-                            isContinueButtonDisabled ?
-                            Color.gray.opacity(0.5) :
                             LinearGradient(
                                 colors: [.appPurple4, .appPurple4.opacity(0.8)],
                                 startPoint: .leading,
